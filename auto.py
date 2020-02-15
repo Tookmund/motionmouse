@@ -21,4 +21,4 @@ def home():
 		pyautogui.moveRel(x, y, duration = 0.25)
 	return ''
 
-app.run()
+app.run(host="0.0.0.0", port="8080")
