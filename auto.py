@@ -1,5 +1,6 @@
 import pyautogui
 import ifaddr
+import random_word
 
 import flask
 from flask import request
@@ -23,15 +24,21 @@ for adapter in adapters:
             if not ip.ip.startswith("127."):
                 IP = ip.ip
 
+securewords = " ".join(random_word.RandomWords().get_random_words(hasDictionaryDef="true", minCorpusCount=10, minDictionaryCount=10, maxLength=10, limit=4))
+print(securewords)
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
 	if request.method == 'GET':
-		return app.send_static_file('index.html')
+            return app.send_static_file('index.html')
 	else:
-		x = int(float(request.form['x']))
-		y = int(float(request.form['y']))
-		print(x, y)
-		pyautogui.moveRel(x, y, duration = 0.25)
+            x = int(float(request.form['x']))
+            y = int(float(request.form['y']))
+            print(x, y)
+            if request.form['reqcode'] == securewords:
+                pyautogui.moveRel(x, y, duration = 0.25)
+            else:
+                print("Incorrect Request Code!")
 	return ''
 
 app.run(host=IP, port=PORT, ssl_context='adhoc')

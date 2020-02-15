@@ -1,4 +1,5 @@
 flask
 pyautogui
+random-word
 ifaddr
 pyopenssl

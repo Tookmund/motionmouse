@@ -27,13 +27,14 @@ function sendMotion(x, y) {
     let xhttp = new XMLHttpRequest();
 	xhttp.open("POST", "/", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("x="+x+"&y="+y);
+	xhttp.send("x="+x+"&y="+y+"&reqcode="+reqcode);
 }
 
 
+var reqcode = "";
 function startAccel(event) {
 	event.preventDefault();
-	let reqcode = document.getElementById("reqcode").value;
+	reqcode = document.getElementById("reqcode").value;
 	try {
 		DeviceMotionEvent.requestPermission().then(state => {
 			if (state == "granted") {
