@@ -14,7 +14,7 @@ function onAccel(event) {
 	z += event.acceleration.z*100;
 	interval += event.interval;
 
-	if (interval >= 0.1) {
+	if (x >= 10 || y >= 10) {
 		sendMotion(x, y);
 		x = 0;
 		y = 0;
