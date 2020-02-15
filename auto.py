@@ -10,7 +10,7 @@ app = flask.Flask(__name__, static_folder = 'static')
 app.config["DEBUG"] = False
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-pyautogui.PAUSE = 1
+#pyautogui.PAUSE = 1
 pyautogui.FAILSAFE = False
 
 IP = ""
@@ -38,7 +38,7 @@ def home():
             print(x, y)
             reqcode = request.form['reqcode'].strip().lower()
             if reqcode == securewords:
-                pyautogui.moveRel(x, y, duration = 0.25)
+                pyautogui.moveRel(x, y, duration = 0.01)
             else:
                 print("Incorrect Request Code!")
 	return ''
