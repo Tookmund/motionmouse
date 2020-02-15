@@ -2,16 +2,23 @@ var x = 0;
 var y = 0;
 var z = 0;
 var interval = 0;
+function getDist(a, t) {
+	return 0.5*a*(t*t);
+}
 
+const MULTFACTOR = 10000;
 function onAccel(event) {
-	document.getElementById("x").innerHTML = event.acceleration.x;
-	document.getElementById("y").innerHTML = event.acceleration.y;
-	document.getElementById("z").innerHTML = event.acceleration.z;
+	let distx = getDist(event.acceleration.x, event.interval)*MULTFACTOR;
+	let disty = getDist(event.acceleration.y, event.interval)*MULTFACTOR;
+	let distz = getDist(event.acceleration.z, event.interval)*MULTFACTOR;
+	document.getElementById("x").innerHTML = distx;
+	document.getElementById("y").innerHTML = disty;
+	document.getElementById("z").innerHTML = distz
 	document.getElementById("interval").innerHTML = event.interval;
 
-	x += event.acceleration.x*100;
-	y += event.acceleration.y*100;
-	z += event.acceleration.z*100;
+	x += distx;
+	y += disty;
+	z += distz;
 	interval += event.interval;
 
 	if (interval >= 0.1) {
