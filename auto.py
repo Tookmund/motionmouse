@@ -24,7 +24,7 @@ for adapter in adapters:
             if not ip.ip.startswith("127."):
                 IP = ip.ip
 
-securewords = " ".join(random_word.RandomWords().get_random_words(hasDictionaryDef="true", minCorpusCount=10, minDictionaryCount=10, maxLength=10, limit=4))
+securewords = " ".join(random_word.RandomWords().get_random_words(hasDictionaryDef="true", minCorpusCount=10, minDictionaryCount=10, maxLength=10, limit=3))
 securewords = securewords.lower()
 print(securewords)
 
