@@ -34,7 +34,7 @@ def home():
             return app.send_static_file('index.html')
 	else:
             x = int(float(request.form['x']))
-            y = int(float(request.form['y']))
+            y = -int(float(request.form['y']))
             print(x, y)
             reqcode = request.form['reqcode'].strip().lower()
             if reqcode == securewords:
