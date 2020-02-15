@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<script>
+			function move() {
+				let xhttp = new XMLHttpRequest();
+				let x = document.getElementById("x").value;
+				let y = document.getElementById("y").value;
+				xhttp.open("POST", "/", true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("x="+x+"&y="+y);
+			}
+		</script>
+	</head>
+	<body>
+		<form id="move">
+			<input type="text" id="x" />
+			<input type="text" id="y" />
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
