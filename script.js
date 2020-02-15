@@ -24,3 +24,7 @@ function startAccel() {
 		}
 	}
 }
+
+window.onload = function() {
+	document.getElementById("submit").onclick = startAccel;
+}
