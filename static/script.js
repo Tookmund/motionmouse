@@ -1,32 +1,12 @@
-var x = 0;
-var y = 0;
-var z = 0;
-var interval = 0;
-function getDist(a, t) {
-	return 0.5*a*(t*t);
-}
-
-const MULTFACTOR = 10000;
 function onAccel(event) {
-	let distx = getDist(event.acceleration.x, event.interval)*MULTFACTOR;
-	let disty = getDist(event.acceleration.y, event.interval)*MULTFACTOR;
-	let distz = getDist(event.acceleration.z, event.interval)*MULTFACTOR;
-	document.getElementById("x").innerHTML = distx;
-	document.getElementById("y").innerHTML = disty;
-	document.getElementById("z").innerHTML = distz
+	let x = event.acceleration.x*10;
+	let y = event.acceleration.y*10;
+	document.getElementById("x").innerHTML = x;
+	document.getElementById("y").innerHTML = y;
 	document.getElementById("interval").innerHTML = event.interval;
 
-	x += distx;
-	y += disty;
-	z += distz;
-	interval += event.interval;
-
-	if (interval >= 0.1) {
+	if (x >= 10 || y >= 10) {
 		sendMotion(x, y);
-		x = 0;
-		y = 0;
-		z = 0;
-		interval = 0;
 	}
 }
 
