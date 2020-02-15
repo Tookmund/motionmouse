@@ -36,4 +36,4 @@ def home():
 		pyautogui.moveRel(x, y, duration = 0.25)
 	return ''
 
-app.run(host=IP, port=PORT)
+app.run(host=IP, port=PORT, ssl_context='adhoc')

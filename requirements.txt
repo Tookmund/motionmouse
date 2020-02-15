@@ -1,3 +1,4 @@
 flask
 pyautogui
 ifaddr
+pyopenssl
