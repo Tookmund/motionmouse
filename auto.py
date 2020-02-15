@@ -15,8 +15,8 @@ def home():
 	if request.method == 'GET':
 		return app.send_static_file('index.html')
 	else:
-		x = int(request.form['x'])
-		y = int(request.form['y'])
+		x = int(float(request.form['x']))
+		y = int(float(request.form['y']))
 		print(x, y)
 		pyautogui.moveRel(x, y, duration = 0.25)
 	return ''
