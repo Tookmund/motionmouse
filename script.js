@@ -6,7 +6,8 @@ function onAccel(event) {
 }
 
 
-function startAccel() {
+function startAccel(event) {
+	event.preventDefault();
 	let reqcode = document.getElementById("reqcode").value;
 	try {
 		DeviceMotionEvent.requestPermission().then(state => {
@@ -26,5 +27,5 @@ function startAccel() {
 }
 
 window.onload = function() {
-	document.getElementById("submit").onclick = startAccel;
+	document.getElementById("accelform").addEventListener("submit", startAccel);
 }
