@@ -1,25 +1,12 @@
-var x = 0;
-var y = 0;
-var z = 0;
-var interval = 0;
-
 function onAccel(event) {
-	document.getElementById("x").innerHTML = event.acceleration.x;
-	document.getElementById("y").innerHTML = event.acceleration.y;
-	document.getElementById("z").innerHTML = event.acceleration.z;
+	let x = event.acceleration.x*10;
+	let y = event.acceleration.y*10;
+	document.getElementById("x").innerHTML = x;
+	document.getElementById("y").innerHTML = y;
 	document.getElementById("interval").innerHTML = event.interval;
-
-	x += event.acceleration.x*100;
-	y += event.acceleration.y*100;
-	z += event.acceleration.z*100;
-	interval += event.interval;
 
 	if (x >= 10 || y >= 10) {
 		sendMotion(x, y);
-		x = 0;
-		y = 0;
-		z = 0;
-		interval = 0;
 	}
 }
 
