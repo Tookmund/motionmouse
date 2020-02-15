@@ -25,6 +25,7 @@ for adapter in adapters:
                 IP = ip.ip
 
 securewords = " ".join(random_word.RandomWords().get_random_words(hasDictionaryDef="true", minCorpusCount=10, minDictionaryCount=10, maxLength=10, limit=4))
+securewords = securewords.lower()
 print(securewords)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -35,7 +36,8 @@ def home():
             x = int(float(request.form['x']))
             y = int(float(request.form['y']))
             print(x, y)
-            if request.form['reqcode'] == securewords:
+            reqcode = request.form['reqcode'].strip().lower()
+            if reqcode == securewords:
                 pyautogui.moveRel(x, y, duration = 0.25)
             else:
                 print("Incorrect Request Code!")
