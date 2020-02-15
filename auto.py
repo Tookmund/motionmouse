@@ -6,6 +6,11 @@ import flask
 from flask import request
 from flask import render_template, send_from_directory
 
+# Disable flask production warning
+import sys
+cli = sys.modules['flask.cli']
+cli.show_server_banner = lambda *x: None
+
 app = flask.Flask(__name__, static_folder = 'static')
 app.config["DEBUG"] = False
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
