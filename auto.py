@@ -10,7 +10,7 @@ app.config["DEBUG"] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 pyautogui.PAUSE = 1
-pyautogui.FAILSAFE = True
+pyautogui.FAILSAFE = False
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
