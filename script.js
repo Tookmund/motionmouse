@@ -1,7 +1,7 @@
 function onAccel(event) {
-	document.getElementById("x").innerHTML = event.accleration.x;
-	document.getElementById("y").innerHTML = event.accleration.y;
-	document.getElementById("z").innerHTML = event.accleration.z;
+	document.getElementById("x").innerHTML = event.acceleration.x;
+	document.getElementById("y").innerHTML = event.acceleration.y;
+	document.getElementById("z").innerHTML = event.acceleration.z;
 	document.getElementById("interval").innerHTML = event.interval;
 }
 
