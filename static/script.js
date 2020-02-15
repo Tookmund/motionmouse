@@ -1,6 +1,6 @@
 function onAccel(event) {
-	let x = event.acceleration.x*10;
-	let y = event.acceleration.y*10;
+	let x = event.acceleration.x;
+	let y = event.acceleration.y;
 	document.getElementById("x").innerHTML = x;
 	document.getElementById("y").innerHTML = y;
 	document.getElementById("interval").innerHTML = event.interval;
