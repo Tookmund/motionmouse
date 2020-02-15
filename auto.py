@@ -6,7 +6,7 @@ from flask import request
 from flask import render_template, send_from_directory
 
 app = flask.Flask(__name__, static_folder = 'static')
-app.config["DEBUG"] = True
+app.config["DEBUG"] = False
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 pyautogui.PAUSE = 1
