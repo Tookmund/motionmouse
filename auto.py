@@ -32,7 +32,7 @@ for adapter in adapters:
 
 securewords = " ".join(random_word.RandomWords().get_random_words(hasDictionaryDef="true", minCorpusCount=10, minDictionaryCount=10, maxLength=10, limit=3))
 securewords = securewords.lower()
-print(securewords)
+print("\033[1mRequest Code: "+securewords+"\033[0m")
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
