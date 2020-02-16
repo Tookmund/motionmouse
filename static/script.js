@@ -1,11 +1,15 @@
+var interval = 0;
 function onAccel(event) {
-	let x = event.acceleration.x;
-	let y = event.acceleration.y;
+	interval += event.interval;
+	if (interval < 0.1) return;
+	interval = 0;
+	let x = event.acceleration.x*10;
+	let y = event.acceleration.y*10;
 	document.getElementById("x").innerHTML = x;
 	document.getElementById("y").innerHTML = y;
 	document.getElementById("interval").innerHTML = event.interval;
 
-	if (x >= 10 || y >= 10) {
+	if (Math.abs(x) >= 10 || Math.abs(y) >= 10) {
 		sendMotion(x, y);
 	}
 }

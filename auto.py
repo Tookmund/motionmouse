@@ -40,6 +40,8 @@ def home():
 	else:
             x = int(float(request.form['x']))
             y = -int(float(request.form['y']))
+            x *= 10
+            y *= 10
             print(x, y)
             reqcode = request.form['reqcode'].strip().lower()
             if reqcode == securewords:
