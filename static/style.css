@@ -1,0 +1,22 @@
+button {
+	display: block;
+	border-radius: 50%;
+	padding: 40px;
+	align: center;
+	text-align: center;
+	margin: 10px auto;
+	width: 40%;
+	font-size: 30px;
+	background-color: #4CAF50; /* Green */
+}
+
+body {
+	align: center;
+	padding: 10px;
+	font-size: 30px;
+}
+input {
+	font-size: 30px;
+	width: 80%;
+	align: center;
+}
