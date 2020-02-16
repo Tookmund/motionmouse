@@ -46,7 +46,11 @@ def home():
             print(x, y)
             reqcode = request.form['reqcode'].strip().lower()
             if reqcode == securewords:
-                pyautogui.moveRel(x, y, duration = 0.01)
+                try:
+                    pyautogui.moveRel(x, y, duration = 0.01)
+                except RuntimeException:
+                    print("Runtime Exception!")
+
             else:
                 print("Incorrect Request Code!")
 	return ''
@@ -55,7 +59,10 @@ def home():
 def click():
     reqcode = request.form['reqcode'].strip().lower()
     if reqcode == securewords:
-        pyautogui.click(button=request.form['button'])
+        try:
+            pyautogui.click(button=request.form['button'])
+        except RuntimeException:
+            print("Runtime Exception!")
     return ''
 
 @app.route('/scroll', methods=['POST'])
@@ -63,7 +70,10 @@ def scroll():
     reqcode = request.form['reqcode'].strip().lower()
     if reqcode == securewords:
         if reqcode == securewords:
-            pyautogui.scroll(int(request.form['clicks']))
+            try:
+                pyautogui.scroll(int(request.form['clicks']))
+            except RuntimeException:
+                print("Runtime Exception!")
     return ''
 
 if __name__ == "__main__":
