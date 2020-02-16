@@ -55,7 +55,9 @@ def home():
 def click():
     reqcode = request.form['reqcode'].strip().lower()
     if reqcode == securewords:
-        pyautogui.click()
+        pyautogui.click(button=request.form['button'])
+    return ''
+
 
 if __name__ == "__main__":
     app.run(host=IP, port=PORT, ssl_context='adhoc')
