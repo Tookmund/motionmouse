@@ -34,10 +34,18 @@ function click(dir) {
 }
 
 
+var accelOn = false;
 var reqcode = "";
 function startAccel(event) {
 	event.preventDefault();
 	reqcode = document.getElementById("reqcode").value;
+	if (accelOn) {
+		window.removeEventListener("devicemotion", onAccel);
+		document.getElementById("submit").innerHTML = "Start";
+		accelOn = !accelOn;
+		return;
+	}
+	accelOn = !accelOn;
 	try {
 		DeviceMotionEvent.requestPermission().then(state => {
 			if (state == "granted") {
@@ -53,6 +61,7 @@ function startAccel(event) {
 			alert(error);
 		}
 	}
+	document.getElementById("submit").innerHTML = "Pause";
 }
 
 window.onload = function() {
