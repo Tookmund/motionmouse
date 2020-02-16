@@ -1,7 +1,7 @@
 var interval = 0;
 function onAccel(event) {
 	interval += event.interval;
-	if (interval < 0.1) return;
+	if (interval < 0.05) return;
 	interval = 0;
 	let x = event.acceleration.x*10;
 	let y = event.acceleration.y*10;
