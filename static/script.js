@@ -21,6 +21,13 @@ function sendMotion(x, y) {
 	xhttp.send("x="+x+"&y="+y+"&reqcode="+reqcode);
 }
 
+function click() {
+    let xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/click", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("reqcode="+reqcode);
+}
+
 
 var reqcode = "";
 function startAccel(event) {
@@ -45,4 +52,5 @@ function startAccel(event) {
 
 window.onload = function() {
 	document.getElementById("accelform").addEventListener("submit", startAccel);
+	document.getElementById("clickbutton").addEventListener("click", click);
 }

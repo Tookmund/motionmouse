@@ -51,5 +51,11 @@ def home():
                 print("Incorrect Request Code!")
 	return ''
 
+@app.route('/click', methods=['POST'])
+def click():
+    reqcode = request.form['reqcode'].strip().lower()
+    if reqcode == securewords:
+        pyautogui.click()
+
 if __name__ == "__main__":
     app.run(host=IP, port=PORT, ssl_context='adhoc')
