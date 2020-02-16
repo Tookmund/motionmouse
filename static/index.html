@@ -4,17 +4,22 @@
 		<title>Motion Mouse</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="static/script.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="static/style.css">
 	</head>
 	<body>
-		<form id="accelform">
-			<label for="reqcode">Request Code:</label>
-			<input name="reqcode" id="reqcode" type="text" />
-			<button type="submit">Start</button>
-		</form>
-		<p>X Acceleration: <span id="x"></span></p>
-		<p>Y Acceleration: <span id="y"></span></p>
-		<p>Z Acceleration: <span id="z"></span></p>
-		<p>Interval: <span id="interval"></span></p>
+		<div class="container-fluid">
+			<form id="accelform">
+				<div class="form-group">
+					<label for="reqcode">Request Code</label>
+					<input class="form-control" name="reqcode" id="reqcode" type="text" placeholder="Check Your Terminal" />
+				</div>
+				<button class="btn btn-primary btn-block" type="submit">Start</button>
+			</form>
+			<p>X Acceleration <span id="x"></span></p>
+			<p>Y Acceleration <span id="y"></span></p>
+			<p>Z Acceleration <span id="z"></span></p>
+			<p>Interval <span id="interval"></span></p>
+		</div>
 	</body>
 </html>
