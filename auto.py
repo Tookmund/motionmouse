@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pyautogui
 import ifaddr
 import random_word
