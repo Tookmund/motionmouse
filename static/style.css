@@ -5,14 +5,12 @@ button {
 	margin: 10px auto;
 	width: 40%;
 	font-size: 30px;
-	background-color: gold;
 }
 
 body {
 	align: center;
 	padding: 10px;
 	font-size: 30px;
-	background-color: #4CAF50;
 }
 input {
 	font-size: 30px;
