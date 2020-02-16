@@ -11,8 +11,8 @@ function onAccel(event) {
 	document.getElementById("z").innerHTML = z;
 	document.getElementById("interval").innerHTML = event.interval;
 
-	if (z >= 20) click("left");
-	else if (z < 0 && Math.abs(z) >= 20) click("right");
+	if (z >= 30) click("left");
+	else if (z < 0 && Math.abs(z) >= 30) click("right");
 
 	if (Math.abs(x) >= 10 || Math.abs(y) >= 10) {
 		sendMotion(x, y);
