@@ -51,4 +51,5 @@ def home():
                 print("Incorrect Request Code!")
 	return ''
 
-app.run(host=IP, port=PORT, ssl_context='adhoc')
+if __name__ == "__main__":
+    app.run(host=IP, port=PORT, ssl_context='adhoc')
