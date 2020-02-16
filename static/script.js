@@ -32,6 +32,12 @@ function click(dir) {
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("button="+dir+"&reqcode="+reqcode);
 }
+function scroll(clicks) {
+    let xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/scroll", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("clicks="+clicks+"&reqcode="+reqcode);
+}
 
 
 var accelOn = false;
@@ -66,4 +72,10 @@ function startAccel(event) {
 
 window.onload = function() {
 	document.getElementById("accelform").addEventListener("submit", startAccel);
+	document.getElementById("up").addEventListener("click", function () {
+		scroll(10);
+	});
+	document.getElementById("down").addEventListener("click", function () {
+		scroll(-10);
+	});
 }

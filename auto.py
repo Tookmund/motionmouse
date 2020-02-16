@@ -58,6 +58,13 @@ def click():
         pyautogui.click(button=request.form['button'])
     return ''
 
+@app.route('/scroll', methods=['POST'])
+def scroll():
+    reqcode = request.form['reqcode'].strip().lower()
+    if reqcode == securewords:
+        if reqcode == securewords:
+            pyautogui.scroll(int(request.form['clicks']))
+    return ''
 
 if __name__ == "__main__":
     app.run(host=IP, port=PORT, ssl_context='adhoc')
